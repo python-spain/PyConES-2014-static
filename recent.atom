@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title type="text">Articulos Recientes</title>
+  <id>http://2014.es.pycon.org/recent.atom</id>
+  <updated>2014-11-02T00:00:00Z</updated>
+  <link href="http://2014.es.pycon.org/" />
+  <link href="http://2014.es.pycon.org/recent.atom" rel="self" />
+  <generator>Werkzeug</generator>
+  <entry xml:base="http://2014.es.pycon.org/recent.atom">
+    <title type="text">¡A una semana de la PyConES2014!</title>
+    <id>http://2014.es.pycon.org/blog/es/a_una_semana_de_la_pycones2014</id>
+    <updated>2014-11-02T00:00:00Z</updated>
+    <published>2014-11-02T00:00:00Z</published>
+    <link href="http://2014.es.pycon.org/blog/es/a_una_semana_de_la_pycones2014" />
+    <author>
+      <name>Juan Ortega Calvo</name>
+    </author>
+    <content type="html">&lt;h2&gt;¡Tan solo queda una semana para la PyConES2014!&lt;/h2&gt;
+&lt;p class=lead&gt;
+
+Si todavía no te has enterado, se celebrará en Zaragoza, en Etopia_ - Centro de arte y
+tecnología, un edificio último-modelo parte de milla digital y situado
+estratégicamente al lado de la estación delicias, el 8 y 9 de noviembre.
+&lt;br/&gt;
+
+Con un aforo esperado de más de trescientos asistentes (¿Aún no tienes tu
+entrada? ¡Corre, que se acaban! &lt;a href=&quot;http://ticketea.com/pycones14&quot;&gt;Consiguela aquí&lt;/a&gt;), y más de 30
+ponentes, este año la conferencia de python españa tiene mejor pinta que nunca.
+&lt;/p&gt;
+
+&lt;p class=&quot;lead&quot;&gt;
+Podeis encontrar &lt;a href=&quot;http://2014.es.python.org/talks&quot;&gt; aquí &lt;/a&gt; los horarios completos de la conferencia, con las
+siguientes charlas y talleres:&lt;/br&gt;
+
+&lt;ul&gt;
+    &lt;li&gt; Victor Terrón - Clases en Python: lo estás haciendo mal&lt;/li&gt;
+    &lt;li&gt; David Arcos - Python on a Plane&lt;/li&gt;
+    &lt;li&gt; Saul Diez-Guerra - Speed without drag&lt;/li&gt;
+    &lt;li&gt; Aitor Guevara - Concurrencia de I/O en Python&lt;/li&gt;
+    &lt;li&gt; James Powell - Generators Will Free Your Mind&lt;/li&gt;
+    &lt;li&gt; Ivan Compañy - Procesamiento de lenguaje natural en python&lt;/li&gt;
+    &lt;li&gt; Eskerda - PyBykes&lt;/li&gt;
+    &lt;li&gt; James Powell - A CPython Eating Its Own Tail&lt;/li&gt;
+    &lt;li&gt; Christine Doig - Introduction to Large Scale Data Analytics and Interactive Visualization in the Browser with Blaze and Bokeh.&lt;/li&gt;
+    &lt;li&gt; Mayte Gimenez y Angela Rivera - Porque Charles Xavier debe cambiar a Cerebro por Python&lt;/li&gt;
+    &lt;li&gt; Jesús Cea - Métodos mágicos en Python 3&lt;/li&gt;
+    &lt;li&gt; Jesús Espino - Django Sample Data helper&lt;/li&gt;
+    &lt;li&gt; Jose A. Rocamonde - Desarrollo de aplicaciones y sistemas embebidos con python&lt;/li&gt;
+    &lt;li&gt; Toni Robres Turón - Testing, testing everywhere&lt;/li&gt;
+    &lt;li&gt; Miguel Angel Garcia - Travisify: Gestión del ciclo de vida de un proyecto desde el propio repositorio&lt;/li&gt;
+    &lt;li&gt; Jaime Crespo - MySQL Fabric, High Availability Solution for Connector/Python&lt;/li&gt;
+    &lt;li&gt; Juan Riaza - Tecnicas avanzadas de Scrapy&lt;/li&gt;
+    &lt;li&gt; Salvador de la puente gonzalez - Fuzzy APIs&lt;/li&gt;
+    &lt;li&gt; Miguel Angel Marco - Breve presentación de Sage.&lt;/li&gt;
+    &lt;li&gt; Francisco Fernandez Castaño - Understanding PyPy&lt;/li&gt;
+    &lt;li&gt; Javier Santana - Torque: Python y Analisis de Datos&lt;/li&gt;
+    &lt;li&gt; CodeSyntax - Buildout: Creando y desplegando configuraciones repetibles en aplicaciones python&lt;/li&gt;
+    &lt;li&gt; Alejandro Enrique Brito Monedero - Fabric más alla de lo básico&lt;/li&gt;
+    &lt;li&gt; Guillem borrell - El problema C10k, la nube y la supercomputación&lt;/li&gt;
+    &lt;li&gt; Samuel de ancos y Alejandro Guirao - Taller de Python Internet Of Things&lt;/li&gt;
+    &lt;li&gt; Ivan Pedrazas - 50 Shades of Docker&lt;/li&gt;
+    &lt;li&gt; Néstor Salceda, Eduardo Ferro, Jaime Gil de Sagredo, Alberto Pérez - Workshop: Diseño modular dirigido por pruebas para Python&lt;/li&gt;
+    &lt;li&gt; Pedro Varo Herrero - Computación de altas prestaciones con python&lt;/li&gt;
+    &lt;li&gt; Cacheme y pybonacci - Python Cientifico&lt;/li&gt;
+    &lt;li&gt; Javier Gutierrez - Desarrollo dirigido por comportamiento en Python con Behave&lt;/li&gt;
+    &lt;li&gt; Fernando Salamero y Enrique Porta - Taller de Creación de Juegos con Pilas­Engine&lt;/li&gt;
+    &lt;li&gt; Jose Luis Cercos - SonSilentSea, creación de un SDK para Blender Game Engine&lt;/li&gt;
+    &lt;li&gt; Oriol Rius - MIIMETIQ&lt;/li&gt;
+    &lt;li&gt; Miquel Camprodon e Israel Saeta - Ligthning talk: Lead Ratings&lt;/li&gt;
+    &lt;li&gt; PyLadies - Y Eva dominió a la serpiente {'pyladies': comunidad femenina de python}&lt;/li&gt;
+    &lt;li&gt; Jesus Espino - Programaciñon funcional con python&lt;/li&gt;
+    &lt;li&gt; Eyad toma - Django-oscar&lt;/li&gt;
+    &lt;li&gt; Eduardo Ferro - Lightning talk: Luke soy tu padre…&lt;/li&gt;
+    &lt;li&gt; Kiko correoso - Hackeando el notebook de IPython&lt;/li&gt;
+    &lt;li&gt; Nuria pujol - Compartir nuestros Ipython Notebooks con el mundo&lt;/li&gt;
+    &lt;li&gt; Kiko Correoso - Brythonmagic&lt;/li&gt;
+    &lt;li&gt; Victor Terrón - Usuarios finales y GitHub: evitando versiones obsoletas&lt;/li&gt;
+    &lt;li&gt; Jaime Gil de Sagredo - Lightning talk: Continuous Delivery para proyectos Python open source&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/p&gt;
+
+&lt;h2&gt;Agradecimiento a los patrocinadores&lt;/h2&gt;
+&lt;p class=lead&gt;
+Este apartado es para vosotros, los patrocinadores y los colaboradores, sin
+vuestra ayuda la PyConES2014 no habría sido posible.
+&lt;/p&gt;
+
+&lt;p class=lead&gt;
+¡Además, podemos contar que habrá sorteos, ofertas de trabajo y algúnas
+sorpresas más en los stands de patrocinadores!
+&lt;/p&gt;
+
+&lt;p class=lead&gt;
+¡Gracias!
+&lt;/p&gt;
+
+&lt;h2 class-&quot;text-center&quot; style=&quot;text-align:center&quot;&gt;Talleres&lt;/h2&gt;
+
+&lt;p class=lead&gt;
+Algunos de los talleres requieren registro y otros ciertos recursos. Os dejamos
+aquí una lista:
+&lt;/p&gt;
+
+&lt;h2&gt;Iván Pedrazas - 50 Shades of docker&lt;/h2&gt;
+&lt;p class=lead&gt;
+Citando a Iván:
+
+&quot;Durante el taller se mostrarán ejemplos prácticos. Como todo el mundo ha
+padecido alguna vez, durante las conferencias la conexión a Internet sufre
+bastante, es por eso que se recomienda a los asistentes que usen una conexión
+remota (con éste código puedes obtener $10 gratis en Digital Ocean, más que
+suficiente para que cada asistente pueda realizar el taller durante un par de
+meses).
+Si prefieres usar tu ordenador, deberás asegurarte que tienes la última versión
+de Docker instalada, y una vez la tengas instalada, ejecuta el setup.sh que hay
+en el repositorio de mi github.&quot;
+&lt;/p&gt;
+
+&lt;h2&gt;Pedro Varo Herrero - Python en cluster - MPI&lt;/h2&gt;
+&lt;p class=lead&gt;
+Citando a Pedro:
+&quot;Cómo para el taller tenemos tiempo limitado, es muy difícil ver cada uno de los
+temas en profundidad en él, por ello quería dejar un formulario que he hecho en
+google y contestarais los que tenéis pensado asistir para ver las preferencias
+de cada uno e incluso que me dejeis  escrito algún tema, preferecia, interes,
+recomendación que os interese tocar.
+
+&lt;a href=&quot;http://goo.gl/forms/EibZzoJ7uq&quot;&gt; Formulario Google
+&lt;/a&gt;
+&quot;
+&lt;/p&gt;
+
+&lt;h2&gt;Samuel De Ancos y Alejandro Guirao - Taller de IOT&lt;/h2&gt;
+&lt;p class=lead&gt;
+Alejandro Guirao escribió hace poco en este mismo blog (Ponentes: ¡Podeis escribir y
+mandarnos pull requests!):
+
+Para garantizar la disponibilidad de sitio en la sala donde se celebrará el taller de
+Python - Internet Of Things de PyConES2014, los organizadores del taller hemos habilitado
+una página de reserva de plaza en el taller, que podréis encontrar (&lt;a
+    href=&quot;https://www.eventbrite.es/e/entradas-taller-de-python-internet-of-things-13482371135&quot;&gt;aquí&lt;/a&gt;).
+Debido a la limitación en el número de plazas, os rogamos que leáis la descripción y os aseguréis de cumplir los requisitos antes de solicitar plaza. ¡Nos vemos allí!
+&lt;/p&gt;
+
+&lt;h2&gt;Mención especial&lt;/h2&gt;
+&lt;p class=lead&gt;
+También hacemos una mención especial a Iván Pedrazas, que se ha comprometido a
+traerse las google glasses, y nos traerá alguna sorpresa de docker también.
+Oh, y ha escrito &lt;a href=&quot;http://ivan.pedrazas.me/?p-364&quot;&gt; este MAGNIFICO
+artículo &lt;/a&gt;sobre por que deberías venir a la PyConES2014.
+&lt;/p&gt;
+
+&lt;h2&gt;Recursos&lt;/h2&gt;
+&lt;p class=lead&gt;
+Si venís de fuera, o no teneis todavía alojamiento / sabeis donde comer o como
+llegar, en la página de &lt;a href=&quot;/info#recursos&quot;&gt; recursos &lt;/a&gt; podeis encontrar
+algunos datos.
+&lt;/p&gt;
+
+&lt;p class=lead&gt;
+Si teneis cualquier duda os la contestaremos en &lt;a
+    href=&quot;http://twitter.com/pycones&quot;&gt;@pycones&lt;/a&gt; o en &lt;a
+    href=&quot;mailto:pycon2014@dlabs.co&quot;&gt; pycon2014@dlabs.co &lt;/a&gt;
+¡No dudeis en preguntar!
+&lt;br/&gt;
+
+En la misma conferencia, junto con el welcome pack (camiseta, acreditación,
+libreta y boli) os entregaremos información relevante a la supervivencia en la
+zona.
+&lt;/p&gt;</content>
+  </entry>
+  <entry xml:base="http://2014.es.pycon.org/recent.atom">
+    <title type="text">Abierta la inscripción para el taller de Python - Internet Of Things</title>
+    <id>http://2014.es.pycon.org/blog/es/taller_iot</id>
+    <updated>2014-10-22T00:00:00Z</updated>
+    <published>2014-10-22T00:00:00Z</published>
+    <link href="http://2014.es.pycon.org/blog/es/taller_iot" />
+    <author>
+      <name>Alejandro Guirao</name>
+    </author>
+    <content type="html">&lt;p&gt;Para garantizar la disponibilidad de sitio en la sala donde se celebrará el taller de Python - Internet Of Things de PyConES2014, los organizadores del taller hemos habilitado una página de reserva de plaza en el taller, que podréis encontrar &lt;a href=&quot;https://www.eventbrite.es/e/entradas-taller-de-python-internet-of-things-13482371135&quot;&gt;aquí&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Debido a la limitación en el número de plazas, os rogamos que leáis la descripción y os aseguréis de cumplir los requisitos antes de solicitar plaza. ¡Nos vemos allí!&lt;/p&gt;</content>
+  </entry>
+  <entry xml:base="http://2014.es.pycon.org/recent.atom">
+    <title type="text">¡Se termina el plazo de convocatoria para la PyConES2014!</title>
+    <id>http://2014.es.pycon.org/blog/es/Se_termina_el_plazo_call4papers</id>
+    <updated>2014-09-04T00:00:00Z</updated>
+    <published>2014-09-04T00:00:00Z</published>
+    <link href="http://2014.es.pycon.org/blog/es/Se_termina_el_plazo_call4papers" />
+    <author>
+      <name>David Francos Cuartero</name>
+    </author>
+    <content type="html">&lt;p class=lead&gt;
+    &lt;b&gt;¡Útima semana!&lt;/b&gt;
+
+    Recordad que el día 10 termina el plazo para enviar vuestros call4Papers.&lt;br/&gt;
+    Si todavía no has enviado tu propuesta, envia un correo con las siguientes caracteristicas a pycon2014@dlabs.co
+
+    &lt;ul &gt;
+        &lt;li&gt; &lt;em&gt; Asunto: &lt;/em&gt;  &amp;nbsp;  PyConES 2014 - Call4Papers Response &lt;/li&gt;
+        &lt;li&gt; &lt;em&gt; Cuerpo: &lt;/em&gt; &amp;nbsp;   Pequeño extracto del tema tu charla&lt;/li&gt;
+        &lt;li&gt; &lt;em&gt; Incluye la duración de tu charla &lt;/em&gt; &lt;/li&gt;
+        &lt;li&gt; &lt;em&gt; Cuéntanos algo sobre ti mismo &lt;/em&gt; &lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/p&gt;</content>
+  </entry>
+  <entry xml:base="http://2014.es.pycon.org/recent.atom">
+    <title type="text">¿De que charlas dispondremos en la PyConES2014?</title>
+    <id>http://2014.es.pycon.org/blog/es/charlas_confirmadas</id>
+    <updated>2014-09-24T00:00:00Z</updated>
+    <published>2014-09-24T00:00:00Z</published>
+    <link href="http://2014.es.pycon.org/blog/es/charlas_confirmadas" />
+    <author>
+      <name>Andrés Gómez Ortega</name>
+    </author>
+    <content type="html">&lt;h1&gt;Programación&lt;/h1&gt;
+&lt;p&gt;Si bien la parrilla de horarios todavía no está establecida (¡No desespereis! Lo haremos este mismo fin de semana),
+disponemos de un listado definitivo de charlas que vamos a encontrar en la PyConES2014.
+Podeis encontrarlo en la &lt;a href=&quot;/talks&quot;&gt;página de charlas&lt;/a&gt;, que ha sido reconvertida desde la página de propuestas.&lt;/p&gt;
+&lt;p&gt;Contamos con varios ponentes internacionales, y charlas sobre:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Charlas propias del lenguaje (en todos los niveles)&lt;/li&gt;
+&lt;li&gt;Practicas comunes&lt;/li&gt;
+&lt;li&gt;Testing&lt;/li&gt;
+&lt;li&gt;Sistemas embebidos&lt;/li&gt;
+&lt;li&gt;Analisis de datos&lt;/li&gt;
+&lt;li&gt;Tecnologías como Ansible, Fabric, Mysql Fabric, Scrapy, ipython, sage&lt;/li&gt;
+&lt;li&gt;Multiples charlas de orientación cientificas&lt;/li&gt;
+&lt;li&gt;Procesamiento del lenguaje natural&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Mencion especial a las charlas con mejores nombres&lt;/h1&gt;
+&lt;p&gt;No hemos podido evitar hacer una mención especial a las charlas con los mejores nombres (por originales o por, simplemente, buenos):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Speed without drag (Saúl Diez Guerra)&lt;/li&gt;
+&lt;li&gt;Clases en Python: Lo estas haciendo mal (Victor Terrón)&lt;/li&gt;
+&lt;li&gt;Porque Charles Xavier debe cambiar a Cerebro por Python (Mayte Gimenez y Angela Rivera)&lt;/li&gt;
+&lt;li&gt;Python on a plane (David Arcos)&lt;/li&gt;
+&lt;li&gt;A Cpython eating its own tail &amp;amp; Generators will free your mind (James Powell)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Agradecimientos&lt;/h1&gt;
+&lt;p&gt;Agradecemos a los ponentes su colaboración y amabilidad con la organización para hacer esta PyConES.&lt;/p&gt;
+&lt;h1&gt;Entradas&lt;/h1&gt;
+&lt;p&gt;¡Ya estan disponibles las entradas finales!&lt;/p&gt;
+&lt;h3&gt;&lt;a href=&quot;http://ticketea.com/pycones14&quot;&gt;¡Consigue la tuya aquí!&lt;/a&gt;&lt;/h3&gt;</content>
+  </entry>
+  <entry xml:base="http://2014.es.pycon.org/recent.atom">
+    <title type="text">¡Listado de ponencias aceptadas para PyConES2014!</title>
+    <id>http://2014.es.pycon.org/blog/es/charlas_decididas</id>
+    <updated>2014-09-24T00:00:00Z</updated>
+    <published>2014-09-24T00:00:00Z</published>
+    <link href="http://2014.es.pycon.org/blog/es/charlas_decididas" />
+    <author>
+      <name>David Francos Cuartero</name>
+    </author>
+    <content type="html">&lt;h1&gt;¿Por qué mi charla no ha sido aceptada?&lt;/h1&gt;
+&lt;p&gt;Si eres una de las cinco o seis personas que se han quedado fuera de las ponencias aceptadas para este año: Lo sentimos.
+El espacio del que disponemos este año es limitado, y hemos tenido que dejar fuera algunas charlas.
+La decisión no ha sido para nada sencilla, hemos tenido nuestras discusiones internas, ahogado nuestras penas en cerveza y dejado más tiempo del que esperabamos para reflexionar al respecto.&lt;/p&gt;
+&lt;p&gt;Como sabréis, ibamos a publicar el listado hace más de una semana, nos fue imposible por esto mismo, quisimos darnos más tiempo, luchar un poco más para ver si podíamos encajar todo.
+En cualquier caso, tenemos que aclarar una serie de cosas que veremos más adelante en este documento.&lt;/p&gt;
+&lt;h1&gt;Esta lista no es 100% definitiva&lt;/h1&gt;
+&lt;p&gt;Con los margenes con los que trabajamos, es más que posible que alguno de los ponentes no pueda asistir a la PyConES2014.
+Si así es, contaremos con más plazas, que podríais cubrir los que os habeis quedado cerca.&lt;/p&gt;
+&lt;h1&gt;Criterios de selección&lt;/h1&gt;
+&lt;p&gt;Hemos utilizado la columna &quot;Rechazadas&quot; de trello para organizar las charlas.&lt;/p&gt;
+&lt;p&gt;De esta forma, quedan:
+- En esa columna, sin ningun color, las charlas cuyos ponentes den otra charla, que este aceptada
+- En esa columna, en rojo, los ponentes cuyas charlas han sido no-aceptadas por algun motivo.&lt;/p&gt;
+&lt;p&gt;Los criterios de selección han sido, aunque de forma un poco flexible:
+- El nivel de publico esperado de la charla y la capacidad que tenemos (tenemos un limite de espacios y espacios de tamaños muy distintos)
+   Esto es, por ejemplo, no podríamos acojer muchas charlas en las que esperemos &amp;gt;200 personas en la charla, ni, si ese espacio esta lleno, muchas que esperemos entre 40 y 80.
+- El &quot;color&quot; de la charla, si encajaba la charla con el estilo que han llevado el resto de charlas propuestas.
+- La redacción de la propuesta. Esto es hasta cierto punto. No hemos podido evitarlo. Lo hemos intentado evitar (y creemos que hemos conseguido evitarlo en casi todos los casos)
+- Los votos. Los votos los hemos usado para preveer el dato que requeríamos para el primer punto. También hay que tener en cuenta que hay gente que ha mandado las propuestas hace muy poco, y eso ha hecho que fueran en desventaja, por que no contabamos con margen.
+- Factores / Opinion de la organización. Nos hemos reservado un pequeño punto de opinión sobre las charlas (sobre todo con los casos que comentabamos que han llegado tarde a las votaciones, o con el ejemplo de Jesús Cea, enviadas en el último momento... y todas ellas muy buenas, que decidimos que una entraba pero todavía no tenemos resuelto cual).&lt;/p&gt;
+&lt;h1&gt;Final&lt;/h1&gt;
+&lt;p&gt;Por último, decir que estamos trabajando muy duro para organizar la PyConES2014, 
+que no esperabamos recibir los ataques que hemos recibido por twitter y por correo electrónico, 
+por suerte de muy pocas personas, y que agradecemos el apoyo recibido por otras vias cuando esto ha sucedido.&lt;/p&gt;</content>
+  </entry>
+  <entry xml:base="http://2014.es.pycon.org/recent.atom">
+    <title type="text">¡Abierto el plazo de convocatoria para la PyConES2014!</title>
+    <id>http://2014.es.pycon.org/blog/es/abierta_convocatoria_pycones2014</id>
+    <updated>2014-08-10T00:00:00Z</updated>
+    <published>2014-08-10T00:00:00Z</published>
+    <link href="http://2014.es.pycon.org/blog/es/abierta_convocatoria_pycones2014" />
+    <author>
+      <name>David Francos Cuartero</name>
+    </author>
+    <content type="html">&lt;h1&gt;¿Debería mandar una propuesta?&lt;/h1&gt;
+&lt;p class=lead&gt;
+&lt;b&gt;Si, deberías.&lt;/b&gt;&lt;br/&gt;
+Tú, tus amigos, los amigos de tus amigos y cualquiera con cualquier nivel de Python. &lt;br/&gt;
+Va a venir gente de toda clase, por lo que deberíamos tener ponentes de todas clases.&lt;br/&gt;
+&lt;b&gt;&lt;/b&gt;¡Contamos con vuestra ayuda para hacer de esta PyConES un evento espectacular!&lt;/b&gt;
+&lt;/p&gt;
+
+&lt;h1&gt;¿Qué clase de charla puedo dar?&lt;/h1&gt;
+&lt;p&gt;&lt;p class=lead&gt;
+    &lt;b&gt; Lightning talk&lt;/b&gt; - Charla rápida, de quince minutos&lt;br/&gt;
+    &lt;b&gt; Talk&lt;/b&gt; - Charla de entre 30m y 1h30m&lt;br/&gt;
+    &lt;b&gt; Workshop &lt;/b&gt; Taller, o cualquier tipo de charla que requiera que los asistentes interactuen y lleven su propio material&lt;br/&gt;
+&lt;/p&gt;&lt;/p&gt;
+&lt;h1&gt;Registro y viaje&lt;/h1&gt;
+&lt;p class=lead&gt;
+    Los ponentes en PyConES recibirán entrada gratuita.&lt;br/&gt;
+    Aquellos ponentes que puedan necesitar ayuda económica para el viaje entrarán en el programa de ayuda económica. &lt;br/&gt;
+    A fecha de hoy, los patrocinios no están cerrados, por lo que no podemos asegurar una fuerte ayuda económica a los ponentes, pero haremos todo lo que podamos por que vuestra estancia sea lo más cómoda posible.
+&lt;/p&gt;</content>
+  </entry>
+</feed>

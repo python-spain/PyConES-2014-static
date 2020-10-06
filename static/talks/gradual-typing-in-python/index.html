@@ -1,0 +1,1785 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<!-- 2015-04-18 sáb 10:31 -->
+<meta  charset="utf-8">
+<meta  htto-equiv="X-UA-Compatible" content="chrome=1">
+<meta  name="generator" content="Org-mode with org-ioslide">
+<meta  name="author" content="Alejandro Gómez">
+
+
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+<!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--This one seems to work all the time, but really small on ipad-->
+<!--<meta name="viewport" content="initial-scale=0.4">-->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="stylesheet" media="all" href="theme/css/default.css">
+<link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+<link rel="stylesheet" media="all" href="theme/css/small-icon.css">
+<base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+<script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+
+   <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+
+<script src="js/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML,local/local" type="text/javascript"></script>
+</head>
+<body style="opacity: 0">
+<slides class="layout-widescreen">
+<slide class="title-slide segue nobackground">
+       <aside class="gdbar"><img src="images/python-logo.png"></aside>
+       <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+       <hgroup class="auto-fadein">
+         <h1 data-config-title><!-- populated from slide_config.json --></h1>
+         <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+         <p data-config-presenter><!-- populated from slide_config.json --></p>
+       </hgroup>
+    </slide>
+
+</slide>
+<slide id="sec-0-1"  >
+<hgroup class="">
+       <h2 class=" ">Agenda</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-0-1">
+
+<ul>
+<li>What is (Static|Dynamic|Gradual) typing?
+</li>
+<li>Gradual Typing in Python
+<ul>
+<li>Function annotations
+</li>
+<li>Type hints
+</li>
+<li>Type hinting syntax proposal
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/python-logo.png"></aside><hgroup class="">
+       <h2 class=" ">What is (Static|Dynamic|Gradual) typing?</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-1">
+
+
+</article>
+
+</slide>
+<slide id="sec-1-1"  >
+<hgroup class="">
+       <h2 class=" ">First things first</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-1-1">
+<ul>
+<li>A <strong>compiler</strong> converts code in text format to another format suitable for execution
+<ul>
+<li>it may be a binary with machine code for a certain platform
+</li>
+<li>or a bytecode that is interpreted by a virtual machine (CPython does this)
+</li>
+</ul>
+</li>
+<li>A <strong>static type checker</strong> is a program that given source code it can verify that
+certain contracts hold true through all the program
+<ul>
+<li>may be part of the compiler
+</li>
+<li>dynamic languages defer those checks to runtime
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-2"  >
+<hgroup class="">
+       <h2 class=" ">Static typing</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-1-2">
+
+<ul>
+<li>The values of a program have type information associated
+to them (often implicit, inferred)
+</li>
+<li>The types of the values of a program are checked
+at compile time
+</li>
+<li>If the type checker accepts a program
+<ul>
+<li>it is <strong>guaranteed</strong> to satisfy the properties
+encoded in its types, be values or operations
+</li>
+<li>the compiler is able to make optimizations
+with type information
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-3"  >
+<hgroup class="">
+       <h2 class=" ">Static typing: Languages</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-1-3">
+
+<ul>
+<li>Haskell
+</li>
+<li>Scala
+</li>
+<li>Java
+</li>
+<li>C
+</li>
+<li>C++
+</li>
+<li>Rust
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-4"  >
+<hgroup class="">
+       <h2 class=" ">Static typing: tradeoffs</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-1-4">
+<p>
+☺
+</p>
+
+<ul>
+<li>Catches certain kinds of bugs earlier in a convenient,
+low-cost way
+</li>
+<li>Type information can be used by the compiler for
+generating more efficient executables
+</li>
+<li>Interaction with third-party code is checked, not just
+your code
+</li>
+</ul>
+
+<p>
+☹
+</p>
+
+<ul>
+<li>Type checkers are, generally speaking, able to check only
+fairly simple properties if your program
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-5"  >
+<hgroup class="">
+       <h2 class=" ">Dynamic typing</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-1-5">
+
+
+<ul>
+<li>The type checking of a program is deferred to run time
+</li>
+<li>Compilers
+<ul>
+<li>compile programs that aren't type safe
+</li>
+<li>don't know about the types of the values
+in the program
+</li>
+</ul>
+</li>
+<li>Many bugs are discovered when running the program
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-6"  >
+<hgroup class="">
+       <h2 class=" ">Dynamic typing: tradeoffs</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-1-6">
+<p>
+☺
+</p>
+
+<ul>
+<li>Dynamic typing reduces the friction of type-checking when programming
+</li>
+<li>It makes it easy to deal with situations where the type of a value
+depends on information only available at run time
+</li>
+<li>Great for interactive development and exploratory programming
+</li>
+<li>Flexibility for adapting to changing requirements
+</li>
+</ul>
+
+<p>
+☹
+</p>
+
+<ul>
+<li>There is generally little or no effort put on annotating values with
+their types in dynamic languages, even though the cost of doing it is low
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-1-7"  >
+<hgroup class="">
+       <h2 class=" ">Dynamic typing: tradeoffs</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-1-7">
+<p>
+☹
+</p>
+
+<ul>
+<li>The following example is a valid Python program, although
+it's obviously ill-typed
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+def yolo():
+    return None + 42
+
+yolo()
+# TypeError: unsupported operand type(s) for +: 'NoneType' and 'int'
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-8"  >
+<hgroup class="">
+       <h2 class=" ">Dynamic typing: Languages</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-1-8">
+
+<ul>
+<li>Python
+</li>
+<li>Clojure
+</li>
+<li>Racket
+</li>
+<li>Lua
+</li>
+<li>Ruby
+</li>
+<li>PHP
+</li>
+<li>JavaScript
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-9"  >
+<hgroup class="">
+       <h2 class=" ">Gradual typing</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-1-9">
+
+<ul>
+<li>Developed by <a href="http://www.cs.colorado.edu/~siek/pubs/pubs/2006/siek06:_gradual.pdf">Jeremy Siek &amp; Walid Taha in 2006</a>
+</li>
+<li>Values may be either typed at compile-time (static)
+or at run-time (dynamic), hybrid typing model
+</li>
+<li>We choose which parts of a program want to type check: "pay-as-you-go"
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-10"  >
+<hgroup class="">
+       <h2 class=" ">Gradual typing: Languages</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-1-10">
+
+<ul>
+<li>Lua
+</li>
+<li>Racket
+</li>
+<li>Clojure
+</li>
+<li>Groovy
+</li>
+<li>TypeScript
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-11"  >
+<hgroup class="">
+       <h2 class=" ">Gradual typing: a semi-formal definition</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-1-11">
+<ul>
+<li>Gradual typing defines a relationship between types: <strong>consistency</strong>
+<ul>
+<li>similar to subtyping (subclassing)
+</li>
+<li>not transitive when the <code>Any</code> type is involved (more on that later)
+</li>
+<li>not symmetric
+</li>
+</ul>
+</li>
+<li>We say that a type <code>t1</code> is consistent with a type <code>t2</code>
+</li>
+<li>Given two variables <code>x</code> and <code>y</code>, and given the type of <code>x</code>
+  is consistent with the type of <code>y</code>
+<ul>
+<li>we can assing <code>x</code> to <code>y</code> in a type-safe manner
+</li>
+<li>otherwise we get a type error
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-1-12"  >
+<hgroup class="">
+       <h2 class=" ">Gradual typing: a semi-formal definition</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-1-12">
+<ul>
+<li>The consistency relationship is defined by the following rules
+<ol>
+<li>A type <code>t1</code> is consistent with a type <code>t2</code> if <code>t1</code> is a
+subclass of <code>t2</code>. This relation is <strong>not</strong> symmetric.
+</li>
+<li>The <code>Any</code> type is consistent with every type, but it is <strong>not</strong>
+     a subclass of every type.
+</li>
+<li>Every type is a subclass of <code>Any</code>, which makes every type
+consistent with <code>Any</code>.
+</li>
+</ol>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-1-13"  >
+<hgroup class="">
+       <h2 class=" ">Gradual typing: Any</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-1-13">
+<ul>
+<li><code>Any</code> is at the root of the type graph, like <code>object</code>
+</li>
+<li>However, <code>object</code> is not consistent with most types
+</li>
+<li>Both <code>Any</code> and <code>object</code> mean "any type allowed" when annotating a function argument
+<ul>
+<li>but only <code>Any</code> can be passed no matter what type is expected
+</li>
+</ul>
+</li>
+<li>In essence, the <code>Any</code> type never makes a type checker complain
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-1-14"  >
+<hgroup class="">
+       <h2 class=" ">Gradual type checker</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-1-14">
+
+<ul>
+<li>A type checker that checks for type errors in the statically typed
+part of a gradually typed program
+</li>
+<li>The type checker deals with unannotated variables and function
+parameters by assigning them the <code>Any</code> type
+</li>
+<li>Can perform more sophisticated static analysis than the linters we use today
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/python-logo.png"></aside><hgroup class="">
+       <h2 class=" ">Gradual typing in Python</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-2">
+
+
+</article>
+
+</slide>
+<slide id="sec-2-1"  >
+<hgroup class="">
+       <h2 class=" ">Function annotations</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-2-1">
+
+
+<ul>
+<li>Introduced by <a href="https://www.python.org/dev/peps/pep-3107/">PEP 3107</a>
+</li>
+<li>Allow arbitrary expressions as annotations
+<ul>
+<li>For parameters and return values
+</li>
+<li>Optional
+</li>
+<li>Insignificant runtime cost
+</li>
+<li>Introduced with no standard semantics
+<ul>
+<li>but BDFL has spoken: Type hints!
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+<slide id="sec-2-1-1"  >
+<hgroup class="">
+       <h2 class=" ">Parameters and return value</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-1-1">
+<ul>
+<li>Optional expressions that follow the parameter name
+</li>
+<li>Precede the (optional) default value
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+def say_hello(name : str = "Anon") -&gt; None: # &lt;- return value annotation
+    #              ^^^^^   ^
+    #              |       `- default value
+    #              `- parameter annotation
+    print("Hello, {}".format(name))
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-1-2"  >
+<hgroup class="">
+       <h2 class=" ">Positional and keyword arguments</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-1-2">
+<ul>
+<li>Can be annotated just like any other parameter
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+def say_hello_to_everybody(*names : "An arbitrary number of names"):
+    list(map(say_hello, names))
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-1-3"  >
+<hgroup class="">
+       <h2 class=" ">lambda</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-2-1-3">
+
+<ul>
+<li>Supporting annotations would require modifying their syntax
+</li>
+<li>To avoid further incompatibility, annotations on lambdas
+were discarded
+</li>
+<li>In Python generally <code>def</code> is preferred over <code>lambda</code>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+</slide>
+<slide id="sec-2-2" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/python-logo.png"></aside><hgroup class="">
+       <h2 class=" ">Type hints</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-2-2">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-3"  >
+<hgroup class="">
+       <h2 class=" ">Type hints</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-2-3">
+
+<ul>
+<li>Are landing in Python 3.5
+</li>
+<li>Strongly inspired by <a href="http://mypy-lang.org/">mypy</a>
+</li>
+<li><a href="https://www.python.org/dev/peps/pep-0482/">PEP 482</a>: Literature Overview for Type Hints
+</li>
+<li><a href="https://www.python.org/dev/peps/pep-0483/">PEP 483</a>: Theory of Type Hints (wip)
+</li>
+<li><a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>: Type Hints (wip)
+</li>
+<li>Keep an eye on <a href="https://github.com/ambv/typehinting">https://github.com/ambv/typehinting</a>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-4"  >
+<hgroup class="">
+       <h2 class=" ">Goals and non-goals</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-2-4">
+
+<ul>
+<li>Goals
+<ul>
+<li>Standard syntax for type annotations
+</li>
+<li>Easier static analysis and refactoring for Python code
+</li>
+</ul>
+</li>
+
+<li>Non-goals
+<ul>
+<li>Runtime type-checking
+</li>
+<li>Performance optimizations based on type hints
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-5"  >
+<hgroup class="">
+       <h2 class=" ">Hello, type hints!</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-5">
+<ul>
+<li>The type checker can check the annotated parts of our programs
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+def greet(name : str) -&gt; str:
+    return "Hello, {}".format(name)
+</pre>
+
+</div>
+
+<p>
+☺
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+greet("Ada")
+# "Hello, Ada"
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+greet(0xADA)
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/python-logo.png"></aside><hgroup class="">
+       <h2 class=" ">Type hinting syntax proposal</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-2-6">
+
+
+</article>
+
+</slide>
+<slide id="sec-2-6-1"  >
+<hgroup class="">
+       <h2 class=" ">Primitive values</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-2-6-1">
+
+<ul>
+<li>Builtins are represented with their constructors
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+int     # unbounded integer
+complex # complex number
+float   # floating point number
+bool    # boolean value
+str     # unicode string
+bytes   # 8-bit string
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-2"  >
+<hgroup class="">
+       <h2 class=" ">Explicit types for variables</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-2">
+<ul>
+<li>Variable types are inferred by the initializer, although there are ambiguous cases
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+l = []
+</pre>
+
+</div>
+<ul>
+<li>In the above example we know <code>l</code> will be a list but the type of its elements is unknown
+</li>
+<li>We can type hint variables using comments
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+l = [] # type: List[int]
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6-3"  >
+<hgroup class="">
+       <h2 class=" ">Collections</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-3">
+<ul>
+<li>The <code>typing</code> module contains generic versions of concrete collection
+types
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import List, Dict, Set, Tuple
+
+List[str]            # list of str objects
+Dict[str, int]       # dictionary from str to int
+Set[str]             # set of str objects
+Tuple[int, int, int] # a 3-tuple of ints
+Tuple[int, ...]      # a variable length tuple of ints
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-4"  >
+<hgroup class="">
+       <h2 class=" ">List</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-4">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import List
+
+l = [] # type: List[int]
+</pre>
+
+</div>
+
+<p>
+☺
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+l = [1, 2, 3]
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+l = [1, 2, "three"]
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6-5"  >
+<hgroup class="">
+       <h2 class=" ">Dict</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-5">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import Dict
+
+d = {} # type: Dict[str, str]
+</pre>
+
+</div>
+
+<p>
+☺
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+d = { "name": "Ada" }
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+d = { "name": 0xADA }
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-6"  >
+<hgroup class="">
+       <h2 class=" ">Set</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-6">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import Set
+
+s = set() # type: Set[int]
+</pre>
+
+</div>
+
+<p>
+☺
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+s = {1, 2, 3}
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+s = {"foo", "bar", "baz"}
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-7"  >
+<hgroup class="">
+       <h2 class=" ">Tuple</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-7">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import Tuple
+
+t = () # type: Tuple[str, int]
+</pre>
+
+</div>
+
+<p>
+☺
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+t = ("baz", 42)
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+t = (42, "foo")
+# or
+t = ("baz", 42, "foo")
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-8"  >
+<hgroup class="">
+       <h2 class=" ">Abstract collections</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-8">
+<ul>
+<li>It also defines abstract collection types similar to those found in
+<code>collections.abc</code> for duck typing
+</li>
+<li>Abstract collection types distinguish between mutable and immutable
+</li>
+<li>Let's see some examples
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import Mapping, MutableMapping, Sequence, MutableSequence
+
+Mapping[str, str]        # a mapping from strings to strings
+MutableMapping[str, str] # a mutable mapping from strings to strings
+
+Sequence[int]            # a sequence of integers
+MutableSequence[int]     # a mutable sequence of integers
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-9"  >
+<hgroup class="">
+       <h2 class=" ">User defined types</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-2-6-9">
+
+<ul>
+<li>Every class in the Python program is also a type
+</li>
+<li>Subclass' instances are also instances of their base
+class types
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+class Foo:
+    def bar(self) -&gt; str:
+        return "baz"
+
+fooer = Foo()
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6-10"  >
+<hgroup class="">
+       <h2 class=" ">User defined types</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-10">
+<ul>
+<li>Access to properties and methods that don't exist yield
+a type error
+</li>
+<li>Limited to properties and methods that are defined at
+compile-time
+<ul>
+<li>some forms of metaprogramming are not supported
+</li>
+</ul>
+</li>
+<li>No more runtime errors for typos!
+</li>
+</ul>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+fooer.baz()
+#     ^
+#     `- typos in method and property names result in type errors
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+
+
+</slide>
+<slide id="sec-2-6-11"  >
+<hgroup class="">
+       <h2 class=" ">Union types</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-11">
+<ul>
+<li>Python functions often accept values of several
+different types
+</li>
+<li>We are able to express those types as <em>type unions</em>
+</li>
+<li>A union represents a set of legal types, <code>Union</code> is
+a type constructor
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import Union
+
+def mul(n : int, m : Union[str, int]):
+    return n * m
+
+mul(42, 1)
+# 1
+mul(42, '*')
+# "******************************************"
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-12"  >
+<hgroup class="">
+       <h2 class=" ">Union types</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-12">
+<ul>
+<li><code>None</code> as an argument is a special case and is replaced by <code>type(None)</code>
+</li>
+<li>Unions of unions are flattened
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+Union[Union[int, str], float] == Union[int, str, float]
+</pre>
+
+</div>
+
+<ul>
+<li>Unions of a single argument vanish
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+Union[str] == str
+</pre>
+
+</div>
+
+<ul>
+<li>Redundant arguments are skipped
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+Union[str, str, int] == Union[str, int]
+</pre>
+
+</div>
+<ul>
+<li>The argument order is irrelevant
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6-13"  >
+<hgroup class="">
+       <h2 class=" ">Union types</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-2-6-13">
+
+
+<ul>
+<li>When two arguments have a subtype relationship, the least derived argument
+is kept
+</li>
+<li>If <code>Any</code> is present, the union becomes an <code>Any</code>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-14"  >
+<hgroup class="">
+       <h2 class=" ">Type variables</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-14">
+<ul>
+<li>We can use <code>TypeVar</code> for creating named generic types
+<ul>
+<li>Supports type constraints
+</li>
+</ul>
+</li>
+<li>Type variables can also be used in function annotations
+</li>
+</ul>
+
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import TypeVar, Sequence, Iterator
+
+T = TypeVar('T')
+
+def dupe(xs : Sequence[T]) -&gt; Iterator[T]:
+    for x in xs:
+        yield x
+        yield x
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-15"  >
+<hgroup class="">
+       <h2 class=" ">Optional</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-15">
+<ul>
+<li>Represents the possible absence of value
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import Optional, TypeVar, Sequence
+
+T = TypeVar('T')
+
+def first(s : Sequence[T]) -&gt; Optional[T]: # equivalent to Union[T, None]
+    return s[0] if s else None
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+x = first(["foo", "bar", "baz"])
+x.lower() # must check for None before using
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-16"  >
+<hgroup class="">
+       <h2 class=" ">Generic classes</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-2-6-16">
+
+
+<ul>
+<li>Collection classes are an example of <em>generic classes</em>
+</li>
+<li>Generic classes have one or more type parameters, which
+can be arbitrary types
+<ul>
+<li><code>Set[int]</code> and <code>Dict[str, int]</code> are concretions of
+generic classes
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-17"  >
+<hgroup class="">
+       <h2 class=" ">Generic classes example (1/3)</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-2-6-17">
+
+<ul>
+<li>Given that we have two arbitrary types <code>A</code> and <code>B</code>
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import TypeVar, Generic
+
+A = TypeVar('A')
+B = TypeVar('B')
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6-18"  >
+<hgroup class="">
+       <h2 class=" ">Generic classes example (2/3)</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-18">
+<ul>
+<li>We can construct a typed generic pair of values
+</li>
+</ul>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+class Pair(Generic[A, B]):
+    def __init__(self, x : A, y : B) -&gt; None:
+        self._value = (x, y,)
+
+    @property
+    def first(self) -&gt; A:
+        return self._value[0]
+
+    @property
+    def second(self) -&gt; B:
+        return self._value[1]
+
+    def swap(self) -&gt; Pair[B, A]:
+        return Pair[B, A](self.second, self.first)
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6-19"  >
+<hgroup class="">
+       <h2 class=" ">Generic classes example (3/3)</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-19">
+<ul>
+<li>In the example below, <code>sp</code> has the type <code>Pair[int, str]</code>
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+a_pair = Pair[str, int]("yada", 42)
+another_pair = p.swap()
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+a_string = "" # implies that x will be of type string
+a_string = another_pair.first
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-6-20"  >
+<hgroup class="">
+       <h2 class=" ">Callables</h2>
+       <h3></h3>
+       </hgroup>
+<article class="larger" id="text-2-6-20">
+
+<ul>
+<li>The <code>Callable</code> type includes the type of its arguments
+and return value
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+Callable[[int, int], int]
+</pre>
+
+</div>
+
+<ul>
+<li>Keyword argument annotation isn't supported
+<ul>
+<li>although annotating only the return type is
+</li>
+</ul>
+</li>
+</ul>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+Callable[..., int]
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-21"  >
+<hgroup class="">
+       <h2 class=" ">Callables example (1/2)</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-21">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from typing import Callable, Iterable, TypeVar
+
+A = TypeVar('A')
+B = TypeVar('B', Iterable[A])
+
+def typed_filter(f : Callable[[A], bool], xs : B) -&gt; B:
+    return filter(f, xs)
+
+def is_positive(x : int) -&gt; bool:
+    return x &gt; 0
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-6-22"  >
+<hgroup class="">
+       <h2 class=" ">Callables example (2/2)</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-6-22">
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+typed_filter(is_positive, {-3, -2, -1, 0, 1, 2, 3})
+# {1, 2, 3}
+</pre>
+
+</div>
+
+<p>
+☹
+</p>
+
+<div class="org-src-container">
+
+<pre class="prettyprint" data-lang="python">
+from operator import add
+
+typed_filter(add, {1, 2, 3})
+</pre>
+
+</div>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+</slide>
+<slide id="sec-2-7" class=" segue dark quote nobackground" style="background-image: url(nil)">
+<aside class="gdbar right bottom"><img src="images/python-logo.png"></aside><hgroup class="">
+       <h2 class=" ">Wrapping up</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-2-7">
+
+
+</article>
+
+</slide>
+
+</slide>
+<slide id="sec-2-8"  >
+<hgroup class="">
+       <h2 class=" ">Things we didn't cover</h2>
+       <h3></h3>
+       </hgroup>
+<article class="large" id="text-2-8">
+
+<ul>
+<li>Annotating third-party code with stub files
+</li>
+<li>Type casts
+</li>
+<li>Overloading
+</li>
+<li>IO types
+</li>
+<li>Regex types
+</li>
+<li>Silencing the type checker
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-9"  >
+<hgroup class="">
+       <h2 class=" ">Conclusions</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-9">
+<ul>
+<li>Type annotations convey valuable information and make
+programs easier to understand and mantain
+</li>
+<li>Type checkers will be able to detect errors <strong>before</strong>
+  running your program, thus aiding during development
+</li>
+<li>Tooling around Python can get better thanks to type
+hints
+<ul>
+<li>documentation
+</li>
+<li>tests generation
+</li>
+</ul>
+</li>
+<li>Type hints are arguably Pythonic and not very invasive
+<ul>
+<li>"Explicit is better than implicit"
+</li>
+</ul>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-2-10"  >
+<hgroup class="">
+       <h2 class=" ">Further information</h2>
+       <h3></h3>
+       </hgroup>
+<article class="" id="text-2-10">
+<ul>
+<li><a href="http://wphomes.soic.indiana.edu/jsiek/what-is-gradual-typing/">What is Gradual Typing?</a> by Jeremy Siek
+</li>
+<li><a href="http://www.artima.com/weblogs/viewpost.jsp?thread=85551">Adding Optional Static Typing to Python</a> by Guido Van Rossum
+</li>
+<li><a href="https://www.youtube.com/watch?v=2wDvzy6Hgxg">Type Hints</a> talk at Pycon 2015 by Guido Van Rossum
+</li>
+<li><a href="http://lwn.net/Articles/627418/">Type hinting for Python</a> by Jake Edge
+</li>
+<li><a href="https://www.python.org/dev/peps/pep-3107/">PEP 3107</a>: Function Annotations
+</li>
+<li><a href="https://www.python.org/dev/peps/pep-0482/">PEP 482</a>: Literature Overview for Type Hints
+</li>
+<li><a href="https://www.python.org/dev/peps/pep-0483/">PEP 483</a>: Theory of Type Hints
+</li>
+<li><a href="https://www.python.org/dev/peps/pep-0484/">PEP 484</a>: Type Hints
+</li>
+<li><a href="http://mypy.readthedocs.org/en/latest/">mypy documentation</a>
+</li>
+</ul>
+
+
+</article>
+
+</slide>
+
+</slide>
+
+
+</slide>
+<slide id="sec-3" class=" segue nobackground" style="background-image: url(nil)">
+<aside class="gdbar right"><img src="images/python-logo.png"></aside><hgroup class="">
+       <h2 class=" ">Questions?</h2>
+       <h3></h3>
+       </hgroup>
+<article class="flexbox vleft auto-fadein" id="text-3">
+
+
+</article>
+
+</slide>
+
+
+</slide>
+<slide id="sec-4" class=" thank-you-slide segue nobackground" style="background-image: url(nil)">
+<aside class="gdbar right"><img src="images/python-logo.png"></aside><article class="flexbox vleft auto-fadein" id="text-4">
+<h2>
+  <p>Thank you ˊ~ω~ˋ</p>
+</h2>
+<br>
+<p class="auto-fadein" data-config-contact>
+</p>
+</article>
+
+</slide>
+<slide class="backdrop"></slide>
+</slides>
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+
+</html>
